@@ -1,0 +1,1 @@
+*/15 * * * * /usr/local/bin/pypi_r2_sync.sh >> /var/log/pypi_r2_sync.log 2>&1
