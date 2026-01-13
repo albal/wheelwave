@@ -2,11 +2,11 @@ const ARTIFACT_PREFIX = "packages/";
 const MANIFEST_KEY = "simple/manifest-v1.json";
 
 // PEP 503-ish normalization: lowercase, collapse runs of [-_.] -> -
-function normalizeProject(name) {
+export function normalizeProject(name) {
   return String(name).toLowerCase().replace(/[-_.]+/g, "-");
 }
 
-function htmlEscape(s) {
+export function htmlEscape(s) {
   return String(s)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
@@ -17,6 +17,10 @@ function htmlEscape(s) {
 
 // Very small in-memory cache per isolate
 let manifestCache = null; // { loadedAtMs:number, etag?:string, data:object }
+
+export function _resetManifestCache() {
+  manifestCache = null;
+}
 
 async function loadManifest(env) {
   const now = Date.now();
