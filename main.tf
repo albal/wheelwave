@@ -38,9 +38,8 @@ resource "cloudflare_workers_script" "pypi" {
 }
 
 resource "cloudflare_workers_custom_domain" "pypi_domain" {
-  account_id  = var.account_id
-  zone_id     = var.zone_id
-  hostname    = var.hostname
-  service     = cloudflare_workers_script.pypi.script_name
-  environment = "production"
+  account_id = var.account_id
+  zone_id    = var.zone_id
+  hostname   = var.hostname
+  service    = cloudflare_workers_script.pypi.script_name
 }

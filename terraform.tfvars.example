@@ -1,0 +1,11 @@
+cloudflare_api_token = "YOUR_CLOUDFLARE_API_TOKEN"
+account_id           = "YOUR_CLOUDFLARE_ACCOUNT_ID"
+zone_id              = "YOUR_CLOUDFLARE_ZONE_ID"
+
+# where WheelWave will be served from
+hostname = "packages.example.com"
+
+# R2 bucket used for artifacts + manifest
+bucket_name = "pypi-artifacts"
+r2_location = "WEUR"
+
